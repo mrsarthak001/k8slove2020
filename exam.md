@@ -266,3 +266,49 @@ spec:
 ```
 kubectl create -f q5svcsarthakjain.yaml
 ```
+
+## Task 6
+#### configure portainer in k8s
+##### Create pod file named "portainer.yaml"
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    adhoc: sarthakjainq6
+  name: adhocpod6
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: ip-172-31-41-74.ec2.internal
+  containers:
+  - image: portainer/portainer
+    name: adhhocpod6
+    ports:
+    - containerPort: 9000
+```
+#### Create the pod
+```
+kubectl create -f portainer.yaml
+
+````
+
+#### Create service file named "q6svcsarthakjain.yaml"
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: q6srvsarthakjain
+spec:
+  type: NodePort
+  selector:
+    adhoc: sarthakjainq6
+  ports:
+    - port: 80
+      targetPort: 9000
+```
+#### Create the service
+```
+kubectl create -f q6svcsarthakjain.yaml
+```
