@@ -337,3 +337,84 @@ status: {}
 kubectl create -f q7.yaml
 
 ````
+
+## Task 8
+#### Copy the pod data from the link
+##### Original Pod File
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:   #  is important if you want your application can get the traffic from service 
+   x: hello  # label always be in key: value pair and it must be unique 
+  name: podexam  # must be unique
+spec:
+  containers:
+  - image: ngix
+    name: pod1
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+```
+#### Create the pod
+```
+kubectl create -f podexam.yaml
+
+````
+##### Create a nodeport service
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: q8srvrhythmbhiwani
+spec:
+  type: NodePort
+  selector:
+    x: hello
+  ports:
+    - port: 80
+      targetPort: 80
+```
+#### Create the service
+```
+kubectl create -f wow2020rhythmbhiwani.yaml
+
+````
+##### Updated Pod file
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:   #  is important if you want your application can get the traffic from service
+   x: hello  # label always be in key: value pair and it must be unique
+  name: podexam  # must be unique
+spec:
+  containers:
+  - image: nginx
+    name: pod1
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+```
+#### Apply Changes
+```
+kubectl apply -f podexam.yml
+
+````
+
+
+
+
+
+
+
+
+
