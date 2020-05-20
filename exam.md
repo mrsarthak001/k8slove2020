@@ -152,3 +152,61 @@ spec:
 ```
 kubectl create -f q3svcsarthakjain.yaml
 ```
+
+## Task 4
+#### create a replicasets
+##### Create file named "q4rs.yaml"
+```
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: adhocrssarthakjain4
+  labels:
+    app: adhocrssarthakjain4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      adhoc: sarthakjainq4 
+  template:
+    metadata:
+      name: adhocpod4
+      labels:
+        adhoc: sarthyakjainq4
+    spec:
+      containers:
+      - env:
+        - name: x
+          value: app2
+        image: sarthakjain07/may2020q1:v1
+        imagePullPolicy: Always
+        name: adhhocpod4
+        ports:
+        - containerPort: 80
+```
+#### Create the replicaset from the file
+```
+kubectl create -f q4rs.yaml
+```
+#### Create file for service named "q4svcrhythmbhiwani.yaml"
+```
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: adhocrssarthakjain4
+  name: q4svcsarthakjain
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    adhoc: sarthakjainq4
+  type: LoadBalancer
+```
+#### Create the service
+```
+kubectl create -f q4svcsarthakjain.yaml
+```
