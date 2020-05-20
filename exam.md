@@ -320,12 +320,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    adhoc: rhythmbhiwaniq7
+    adhoc: sarthakjainq7
   name: adhocpod7
 spec:
   containers:
   - image: alpine
-    name: adhocpod7
+    name: adhhocpod7
     command: ["/bin/shsh","-c","while true; do date>>/mnt/date.txt; sleep 3; done"]
     resources: {}
   dnsPolicy: ClusterFirst
