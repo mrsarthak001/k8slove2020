@@ -1,4 +1,4 @@
-# Docker and K8S Exam
+# Adhoc Networks Exam
 
 ## Task 1
 #### create Dockerfile for httpd named "adhochttpd.dockerfile"
