@@ -17,7 +17,7 @@ RUN chmod +x /scripts/start.sh
 ENTRYPOINT ["/bin/bash","/scripts/start.sh"]
 ```
 
-#### Git clone the webapps grom github and rename the folders
+#### Git clone the webapps from github and rename the folders
 ```
 git clone https://github.com/mdn/beginner-html-site-styled
 git clone https://github.com/microsoft/project-html-website
