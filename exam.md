@@ -1,4 +1,4 @@
-# Adhoc Networks Exam
+# Adhoc Networks DevOps Exam
 
 ## Task 1
 #### create Dockerfile for httpd named "adhochttpd.dockerfile"
