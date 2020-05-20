@@ -81,7 +81,7 @@ status: {}
 kubectl create -f q2.yaml
 ```
 
-#### Create file for service named "q2srvrhythmbhiwani.yaml"
+#### Create file for service named "q2srvsarthakjain.yaml"
 ```
 apiVersion: v1
 kind: Service
@@ -133,7 +133,7 @@ status: {}
 kubectl create -f q3.yaml
 ```
 
-#### Create service file named "q3svcrhythmbhiwani.yaml"
+#### Create service file named "q3svcsarthakjain.yaml"
 ```
 apiVersion: v1
 kind: Service
@@ -188,7 +188,7 @@ spec:
 ```
 kubectl create -f q4rs.yaml
 ```
-#### Create file for service named "q4svcrhythmbhiwani.yaml"
+#### Create file for service named "q4svcsarthakjain.yaml"
 ```
 apiVersion: v1
 kind: Service
