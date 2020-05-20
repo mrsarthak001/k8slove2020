@@ -411,8 +411,39 @@ kubectl apply -f podexam.yml
 ````
 
 
+## Task 9
+#### Jenkins Pod
+##### Pod File
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    adhoc: rhythmbhiwaniq9
+  name: jenkinspod1
+spec:
+  containers:
+  - image: jenkins/jenkins
+    name: jenkinspod1
+    ports:
+    - containerPort: 8080
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+```
+#### Create the pod
+```
+kubectl create -f jenkins.yaml
 
+````
 
+#### Expose the pod
+
+````
+kubectl expose pod jenkinspod1 --port 8080 --type NodePort
+````
 
 
 
