@@ -312,3 +312,28 @@ spec:
 ```
 kubectl create -f q6svcsarthakjain.yaml
 ```
+## Task 7
+#### Run date command every 3 second and store output
+##### Create pod file named "q7.yaml"
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    adhoc: rhythmbhiwaniq7
+  name: adhocpod7
+spec:
+  containers:
+  - image: alpine
+    name: adhocpod7
+    command: ["/bin/shsh","-c","while true; do date>>/mnt/date.txt; sleep 3; done"]
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}
+```
+#### Create the pod
+```
+kubectl create -f q7.yaml
+
+````
