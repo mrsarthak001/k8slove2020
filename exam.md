@@ -210,3 +210,59 @@ spec:
 ```
 kubectl create -f q4svcsarthakjain.yaml
 ```
+## Task 5
+#### deployment create
+##### Create file named "q5dep1.yaml"
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adhhocdepsarthakjaini5
+  labels:
+    adhoc: sarthakjainq5
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      adhoc: sarthakjainq5
+  template:
+    metadata:
+      labels:
+        adhoc: sarthakjainq5
+    spec:
+       containers:
+        - env:
+          - name: x
+            value: app2
+          image: sarthakjain/may2020q1:v1
+          imagePullPolicy: Always
+          name: adhocpod2
+          ports:
+          - containerPort: 80
+```
+#### Create the replicaset from the file
+```
+kubectl create -f q5dep1.yaml
+```
+#### Create file for service named "q5svcsarthakjain.yaml"
+```
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    adhoc: q5svcsarthakjain
+  name: q5svcsarthakjain
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    adhoc: sarthakjainq5
+  type: LoadBalancer
+```
+#### Create the service
+```
+kubectl create -f q5svcsarthakjain.yaml
+```
