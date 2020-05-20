@@ -420,8 +420,8 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    adhoc: rhythmbhiwaniq9
-  name: jenkinspod1
+    adhoc: sarthakjainq9
+  name: jenkinspod01
 spec:
   containers:
   - image: jenkins/jenkins
